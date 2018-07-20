@@ -1,0 +1,27 @@
+{
+  "name": "hr-frontend-capstone",
+  "version": "1.0.0",
+  "description": "HR project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannylu88/HR-Frontend-Capstone.git"
+  },
+  "author": "Danny Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannylu88/HR-Frontend-Capstone/issues"
+  },
+  "homepage": "https://github.com/dannylu88/HR-Frontend-Capstone#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3"
+  }
+}
