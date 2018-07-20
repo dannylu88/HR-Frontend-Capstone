@@ -37,4 +37,25 @@ router.get(':imageId', (request, response, next) =>{
   });
 });
 
+router.post('/', (request, response, next) =>{
+	const image = new Image({
+		_id: new mongoose.Types.ObjectId(),
+		imageUrl: request.body.imageUrl
+	});
+	image.save()
+	     .then(image =>{
+	     	console.log(image);
+	     	response.status(201).json({
+	     		message:'successfully post imageUrl',
+	     		addedImgUrl:image
+	     	});
+	     })
+	     .catch(err =>{
+	     	console.log(err);
+	     	response.status(500).json({
+	     		error:err
+	     	})
+	     });
+})
+
 module.exports = router;
