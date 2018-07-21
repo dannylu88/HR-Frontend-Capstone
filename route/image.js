@@ -18,9 +18,11 @@ router.get('/', (request, response, next) =>{
   });
 });
 
-router.get(':imageId', (request, response, next) =>{
+router.get('/:imageId', (request, response, next) =>{
   const id = request.params.imageId;
-  Image.findById(id).exec().then( image =>{
+  Image.findById(id)
+  .exec()
+  .then( image =>{
   	console.log('single image', image);
   	if(image) response.status(200).json(image)
     else{
@@ -56,6 +58,24 @@ router.post('/', (request, response, next) =>{
 	     		error:err
 	     	})
 	     });
+});
+
+router.delete('/:imageId', (request, response, next) =>{
+	const id = request.params.imageId;
+    Image.remove({
+    	_id:id
+    })
+    .exec()
+    .then( imageId =>{
+    	console.log('Successfully delete');
+    	response.status(200).json(imageId);
+    })
+    .catch(err=>{
+    	console.log(err);
+    	response.status(500).json({
+    		error:err
+    	})
+    });
 })
 
 module.exports = router;
