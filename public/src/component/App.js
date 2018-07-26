@@ -4,22 +4,34 @@ import PropTypes from 'prop-types'
 class Gallery extends React.Component{
 	constructor(props){
 		super(props)
+		console.log(this.props)
+		
 	}
-
-	renderImage(imageUrl){
-		return (
-          <div>
-          	<img src = {imageUrl} />
-          </div>   
-	    )
-	}
+   
+   renderImage(){
+   	 let images = [];
+   	 for (let i = 0; i < this.props.imageUrls.length; i++){
+   	 	images.push(
+           <div key = {i}>
+ 
+   	 		<img src = {this.props.imageUrls[i]} />
+   	 		</div>)
+   	 };
+      return images;
+   }
+	// renderImage(imageUrl){
+	// 	return (
+ //          <div>
+ //          	<img src = {imageUrl} />
+ //          </div>   
+	//     )
+	// }
 	render(){
 		return(
 
 			<div className = 'gallery'>
 			  <div className = 'images'>
-			    {this.props.imageUrls.map((imageUrl, index) => (
-			    	this.renderImage(imageUrl)))}
+                {this.renderImage()}
 			  </div>
 		     		
 			</div>
