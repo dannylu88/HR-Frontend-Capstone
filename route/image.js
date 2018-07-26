@@ -42,6 +42,7 @@ router.get('/:imageId', (request, response, next) =>{
 router.post('/', (request, response, next) =>{
 	const image = new Image({
 		_id: new mongoose.Types.ObjectId(),
+		product:request.body.product,
 		imageUrl: request.body.imageUrl
 	});
 	image.save()
@@ -76,6 +77,24 @@ router.delete('/:imageId', (request, response, next) =>{
     		error:err
     	})
     });
-})
+});
+
+router.delete('/:product', (request, response, next) =>{
+  const product = request.params.product;
+  Image.remove({
+  	product:product
+  })
+  .exec()
+  .then((product) =>{
+  	console.log(`Successfully delete ${product}`);
+  	response.status(200).json(product);
+  })
+  .catch(err =>{
+  	console.log(err);
+  	response.status(500).json({
+  		error:err
+  	})
+  });
+});
 
 module.exports = router;
