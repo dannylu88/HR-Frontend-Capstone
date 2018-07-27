@@ -44,7 +44,7 @@ class Gallery extends React.Component{
    }
 
    handleHover(newImage) {
-     console.log('Hi from hover', newImage);
+     //console.log('Hi from hover', newImage);
      this.setState({
        image: newImage
      });
