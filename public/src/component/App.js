@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import ImageEntry from './ImageEntry'
 import Image from './Image'
+import style from '../style/App.css'
 
 class Gallery extends React.Component{
 	constructor(props){
@@ -42,8 +43,8 @@ class Gallery extends React.Component{
    render(){
     return(
       <div className = 'gallery'>
-			  <div className = 'images'>
-        {this.state.images.map((image) => (
+			  <div className = {style.thumbnail}>
+        {this.state.images.map(image => (
           <ImageEntry 
             image = {image}
             //key is unique by URL

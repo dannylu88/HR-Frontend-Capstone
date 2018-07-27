@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import style from '../style/ImageEntry.css'
 
 class ImageEntry extends Component{
   constructor(props) {
@@ -6,11 +7,11 @@ class ImageEntry extends Component{
     console.log(this.props)
   }
   
-  
+
   render(){
     return (
       <div>
-        <img src = {this.props.image} />
+        <img className = {style.imageEntry} src = {this.props.image} />
       </div>
     )
   }
