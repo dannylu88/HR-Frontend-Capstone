@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-const Image = require('../model/image');
+const Product = require('../model/image');
 
 router.get('/', (request, response, next) =>{
-  Image.find()
+  Product.find()
   .exec()
-  .then(images =>{
-  	response.status(200).json(images);
+  .then(products =>{
+  	response.status(200).json(products);
   })
   .catch(err =>{
   	console.log(err);
@@ -18,16 +18,18 @@ router.get('/', (request, response, next) =>{
   });
 });
 
-router.get('/:imageId', (request, response, next) =>{
-  const id = request.params.imageId;
-  Image.findById(id)
+router.get('/:productId', (request, response, next) =>{
+  const id = request.params.productId;
+  Product.findById(id)
   .exec()
-  .then( image =>{
-  	console.log('single image', image);
-  	if(image) response.status(200).json(image)
+  .then( product =>{
+  	console.log('single product', product);
+  	if(product) {
+  		response.status(200).json(product)
+  	} 
     else{
     	response.status(400).json({
-    		message:'not valid image id / cannot find image'
+    		message:'not valid product id / cannot find product'
     	});
     }
   })
@@ -40,17 +42,17 @@ router.get('/:imageId', (request, response, next) =>{
 });
 
 router.post('/', (request, response, next) =>{
-	const image = new Image({
+	const product = new Product({
 		_id: new mongoose.Types.ObjectId(),
 		product:request.body.product,
 		imageUrl: request.body.imageUrl
 	});
-	image.save()
-	     .then(image =>{
-	     	console.log(image);
+	product.save()
+	     .then(product =>{
+	     	console.log(product);
 	     	response.status(201).json({
-	     		message:'successfully post imageUrl',
-	     		addedImgUrl:image
+	     		message:'successfully post productUrl',
+	     		addedImgUrl:product
 	     	});
 	     })
 	     .catch(err =>{
@@ -61,15 +63,15 @@ router.post('/', (request, response, next) =>{
 	     });
 });
 
-router.delete('/:imageId', (request, response, next) =>{
-	const id = request.params.imageId;
-    Image.remove({
+router.delete('/:productId', (request, response, next) =>{
+	const id = request.params.productId;
+    Product.remove({
     	_id:id
     })
     .exec()
-    .then( imageId =>{
+    .then( productId =>{
     	console.log('Successfully delete');
-    	response.status(200).json(imageId);
+    	response.status(200).json(productId);
     })
     .catch(err=>{
     	console.log(err);
@@ -81,7 +83,7 @@ router.delete('/:imageId', (request, response, next) =>{
 
 router.delete('/:product', (request, response, next) =>{
   const product = request.params.product;
-  Image.remove({
+  Product.remove({
   	product:product
   })
   .exec()
