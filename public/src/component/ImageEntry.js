@@ -10,7 +10,7 @@ class ImageEntry extends Component{
 
   render(){
     return (
-      <div>
+      <div onMouseOver={() => this.props.hover(this.props.image)}>
         <img className = {style.imageEntry} src = {this.props.image} />
       </div>
     )

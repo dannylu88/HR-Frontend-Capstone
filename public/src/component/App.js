@@ -10,11 +10,11 @@ class Gallery extends React.Component{
 		super(props)
 		console.log(this.props)
     this.fetchImageEntry();
-    this.fetchImage();
 		this.state = {
       images: [],
       image:''
-		}
+    }
+    this.handleHover = this.handleHover.bind(this);
 
 	}
    
@@ -32,7 +32,8 @@ class Gallery extends React.Component{
         images.push(imageUrl);
       }
       this.setState({
-        images: images
+        images: images,
+        image: images[0]
       });
 		   
    		console.log('imageUrl in Array: ',this.state.images)
@@ -42,17 +43,11 @@ class Gallery extends React.Component{
    	});
    }
 
-   fetchImage(){
-     axios.get('image/5b5a7615c377690e4dd632cf')
-     .then(response =>{
-        let initialImg = response.data.imageUrl[0].split(',')[0];
-        console.log('initialimg',initialImg);
-        this.setState({image:initialImg});
-     })
-     .catch(err =>{
-       console.log(err);
+   handleHover(newImage) {
+     console.log('Hi from hover', newImage);
+     this.setState({
+       image: newImage
      });
-    //console.log(this.state.image)
    }
 
    render(){
@@ -64,6 +59,7 @@ class Gallery extends React.Component{
             image = {image}
             //key is unique by URL
             key = {image}
+            hover={this.handleHover}
           />
         ))}
         </div> 	
