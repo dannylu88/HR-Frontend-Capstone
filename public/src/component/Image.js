@@ -5,9 +5,11 @@ export default class Image extends Component {
   
   render(){
     return(
-    <span>
-      <img className = {style.image} src = {this.props.image} />
-    </span>
+    <div className={style.imageContainer}>
+      <span>
+        <img className = {style.image} src = {this.props.image} />
+      </span>
+    </div>
       );
     
   }

@@ -1,6 +1,15 @@
 .image{
   position: relative;
   left:70px;
-  display:block;
-  margin-left: 45px;
+  margin: auto;
+  height: auto;
+  overflow:hidden;
+  justify-content: center;
+}
+
+.imageContainer {
+  height: 500px;
+  width: 500px;
+  padding-left: 6%;
+  display: flex;
 }
