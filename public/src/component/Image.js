@@ -19,7 +19,7 @@ export default class Image extends Component {
   handleHoverZoom(imageZoom){
     console.log('hover zoom', imageZoom);
     this.setState({
-      imageZoom:''
+      imageZoom:imageZoom
     });
   }
   

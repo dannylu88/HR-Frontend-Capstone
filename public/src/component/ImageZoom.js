@@ -10,7 +10,7 @@ export default class ImageZoom extends Component{
     render(){
         return (
          <span styles = {this.props.backgroundPosition}>
-           {this.props.zoomedImage}
+           <img src = {this.props.zoomedImage} />
          </span>
         );
     }
