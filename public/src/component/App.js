@@ -9,7 +9,8 @@ class Gallery extends React.Component{
 	constructor(props){
 		super(props)
 		console.log(this.props)
-		this.fetchImage();
+    this.fetchImageEntry();
+    this.fetchImage();
 		this.state = {
       images: [],
       image:''
@@ -17,7 +18,7 @@ class Gallery extends React.Component{
 
 	}
    
-   fetchImage(){
+   fetchImageEntry(){
    	axios.get('/image/5b5a7615c377690e4dd632cf')
    	.then(response =>{
    		//console.log('below is response',response);
@@ -40,9 +41,23 @@ class Gallery extends React.Component{
       console.log(err);
    	});
    }
+
+   fetchImage(){
+     axios.get('image/5b5a7615c377690e4dd632cf')
+     .then(response =>{
+        let initialImg = response.data.imageUrl[0].split(',')[0];
+        console.log('initialimg',initialImg);
+        this.setState({image:initialImg});
+     })
+     .catch(err =>{
+       console.log(err);
+     });
+    //console.log(this.state.image)
+   }
+
    render(){
     return(
-      <div className = 'gallery'>
+      <span className = {style.gallery}>
 			  <div className = {style.thumbnail}>
         {this.state.images.map(image => (
           <ImageEntry 
@@ -51,9 +66,9 @@ class Gallery extends React.Component{
             key = {image}
           />
         ))}
-        <Image image={this.state.image}/>
-        </div> 		
-			</div>
+        </div> 	
+        <Image image={this.state.image}/>	
+			</span>
 		 );
     }
   }
