@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import ImageEntry from './ImageEntry';
+import ImageEntry from './ImageEntry'
+import Image from './Image'
 
 class Gallery extends React.Component{
 	constructor(props){
@@ -9,7 +10,8 @@ class Gallery extends React.Component{
 		console.log(this.props)
 		this.fetchImage();
 		this.state = {
-			images: []
+      images: [],
+      image:''
 		}
 
 	}
@@ -48,6 +50,7 @@ class Gallery extends React.Component{
             key = {image}
           />
         ))}
+        <Image image={this.state.image}/>
         </div> 		
 			</div>
 		 );

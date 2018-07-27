@@ -5,7 +5,8 @@ class ImageEntry extends Component{
     super(props)
     console.log(this.props)
   }
-
+  
+  
   render(){
     return (
       <div>
