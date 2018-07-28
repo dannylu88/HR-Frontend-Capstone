@@ -30,13 +30,18 @@ export default class Image extends Component {
     });
   }
 
-
+  // handleMouseMove = e => {
+  //   const { left, top, width, height } = e.target.getBoundingClientRect()
+  //   const x = (e.pageX - left) / width * 100
+  //   const y = (e.pageY - top) / height * 100
+  //   this.setState({ backgroundPosition: `${x}% ${y}%` })
+  // }
   render(){
     return(
     <div className={style.imageContainer}>
       <span>
         <img className = {style.image} src = {this.props.image} 
-             onMouseMove = {() => this.handleHoverZoom(this.props.image)} onMouseLeave = {() => this.handleHoverZoomEnd()}/>
+             onMouseOver = {() => this.handleHoverZoom(this.props.image)} onMouseLeave = {() => this.handleHoverZoomEnd()}/>
       </span>
       <ImageZoom zoomedImage = {this.state.imageZoom} backgroundPosition = {this.state.backgroundPosition}/>
     </div>
