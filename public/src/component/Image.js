@@ -44,9 +44,10 @@ export default class Image extends Component {
         <div className={style.renderImage}>
       <ReactImageMagnify {...{
         smallImage: {
-        isFluidWidth: true,
         src: this.props.image,
-        size: '1000px 1000px'
+        width:420,
+        height:550
+
       },
       largeImage: {
         src: this.props.image,

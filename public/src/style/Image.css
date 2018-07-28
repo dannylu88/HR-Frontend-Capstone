@@ -5,21 +5,20 @@
   height: auto;
   overflow:hidden;
   justify-content: center;
-  height:1600px;
-  width:1400px;
+  height:600px;
+  width:400px;
 }
 
 .imageContainer {
-  height: 800px;
-  width: 800px;
+  height: 70%;
+  width: 70%;
   padding-left: 6%;
   display: flex;
 }
 
 .perimeter {
-  max-width: 2000px;
-
-  margin: 0 auto;
+  max-width: 1300px;
+  
   display: flex;
   flex-direction: column;
 }
