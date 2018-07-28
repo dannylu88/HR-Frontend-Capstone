@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import ImageZoom from './ImageZoom'
 import style from '../style/Image.css'
-
+import ReactImageMagnify from 'react-image-magnify';
 
 export default class Image extends Component {
   constructor(props){
@@ -40,8 +40,22 @@ export default class Image extends Component {
     return(
     <div className={style.imageContainer}>
       <span>
-        <img className = {style.image} src = {this.props.image} 
-             onMouseOver = {() => this.handleHoverZoom(this.props.image)} onMouseLeave = {() => this.handleHoverZoomEnd()}/>
+      <div className = {style.perimeter}>
+        <div className={style.renderImage}>
+      <ReactImageMagnify {...{
+        smallImage: {
+        isFluidWidth: true,
+        src: this.props.image,
+        size: '1000px 1000px'
+      },
+      largeImage: {
+        src: this.props.image,
+        width: 1200,
+        height: 1800
+    }
+}} />
+     </div>
+    </div>
       </span>
       <ImageZoom zoomedImage = {this.state.imageZoom} backgroundPosition = {this.state.backgroundPosition}/>
     </div>
