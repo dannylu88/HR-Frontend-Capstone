@@ -28,7 +28,8 @@
     "nodemon": "^1.18.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-image-zoom": "^0.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -1,10 +1,12 @@
 .image{
   position: relative;
-  left:70px;
+  left:30px;
   margin: auto;
   height: auto;
   overflow:hidden;
   justify-content: center;
+  height:600px;
+  width:400px;
 }
 
 .imageContainer {

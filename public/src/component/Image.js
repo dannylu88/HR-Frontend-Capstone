@@ -9,7 +9,7 @@ export default class Image extends Component {
     console.log('Image Props', this.props)
     this.state = {
       imageZoom: '',
-      backgroundPosition: '0% 0%'
+      backgroundPosition: '30% 30%'
     }
   
     this.handleHoverZoom = this.handleHoverZoom.bind(this);
@@ -21,7 +21,7 @@ export default class Image extends Component {
     this.setState({
       imageZoom:imageZoom
     });
-  }
+  } 
   
   handleHoverZoomEnd(imageZoom){
     console.log('hover zoom end', imageZoom)
@@ -30,9 +30,6 @@ export default class Image extends Component {
     });
   }
 
-  hihi(){
-     'hihi'
-  }
 
   render(){
     return(
