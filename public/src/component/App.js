@@ -11,7 +11,7 @@ class Gallery extends React.Component{
 		console.log(this.props)
     this.fetchImageEntry();
 		this.state = {
-      images: [],
+      imagesEntry: [],
       image:''
     }
     this.handleHover = this.handleHover.bind(this);
@@ -23,7 +23,7 @@ class Gallery extends React.Component{
    	.then(response =>{
    		//console.log('below is response',response);
    		let images = [];
-       console.log('data', response.data)
+       console.log('response data from db', response.data)
        let imagesSplit = response.data.imageUrl[0].split(',');
     
       for(let i = 0; i < imagesSplit.length; i++){
@@ -32,7 +32,7 @@ class Gallery extends React.Component{
         images.push(imageUrl);
       }
       this.setState({
-        images: images,
+        imagesEntry: images,
         image: images[0]
       });
 		   
@@ -54,7 +54,7 @@ class Gallery extends React.Component{
     return(
       <span className = {style.gallery}>
 			  <div className = {style.thumbnail}>
-        {this.state.images.map(image => (
+        {this.state.imagesEntry.map(image => (
           <ImageEntry 
             image = {image}
             //key is unique by URL

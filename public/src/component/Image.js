@@ -40,6 +40,7 @@ export default class Image extends Component {
     return(
     <div className={style.imageContainer}>
       <span>
+        {/* both style.renderImage / perimeter doesn't control Magnify */}
       <div className = {style.perimeter}>
         <div className={style.renderImage}>
       <ReactImageMagnify {...{
@@ -52,7 +53,11 @@ export default class Image extends Component {
       largeImage: {
         src: this.props.image,
         width: 1200,
-        height: 1800
+        height: 1800,
+        enlargedImageStyle:{
+          height:700,
+          width:420
+        }
     }
 }} />
      </div>
