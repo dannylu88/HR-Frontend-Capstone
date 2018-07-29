@@ -57,6 +57,10 @@ export default class Image extends Component {
         enlargedImageStyle:{
           height:700,
           width:420
+        },
+        enlargedImageContainerDimensions:{
+          width:'80%',
+          height:'80%'
         }
     }
 }} />
@@ -69,3 +73,13 @@ export default class Image extends Component {
   }
 }
 
+// render(){
+//   return(
+//   <div className={style.imageContainer}>
+//     <span>
+//       <img className = {style.image} src = {this.props.image} 
+//            onMouseMove = {() => this.handleHoverZoom(this.props.image)} onMouseLeave = {() => this.handleHoverZoomEnd()}/>
+//            onMouseOver = {() => this.handleHoverZoom(this.props.image)} onMouseLeave = {() => this.handleHoverZoomEnd()}/>
+//     </span>
+//     <ImageZoom zoomedImage = {this.state.imageZoom} backgroundPosition = {this.state.backgroundPosition}/>
+//   </div>
