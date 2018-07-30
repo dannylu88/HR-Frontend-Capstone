@@ -61,8 +61,7 @@ export default class Image extends Component {
         enlargedImageContainerDimensions:{
           width:'80%',
           height:'80%'
-        },
-        shouldUsePositiveSpaceLens:true
+        }
     }
 }} />
      </div>
