@@ -3,5 +3,7 @@ node_js:
  -stable
 service:
  -mongodb
+install:
+ -npm install
 script:
  -npm test
