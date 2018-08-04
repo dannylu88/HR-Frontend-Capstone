@@ -1,7 +1,7 @@
 FROM node:8
 
-COPY . /FEC-Danny-L
-WORKDIR /FEC-Danny-L
+COPY . /HR-Frontend-Capstone
+WORKDIR /HR-Frontend-Capstone
 
 
 RUN npm install
