@@ -4,7 +4,7 @@ import style from '../style/ImageEntry.css'
 class ImageEntry extends Component{
   constructor(props) {
     super(props)
-    console.log('props in ImageEntry', this.props)
+   // console.log('props in ImageEntry', this.props)
   }
   
 

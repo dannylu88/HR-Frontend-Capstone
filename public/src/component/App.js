@@ -23,7 +23,7 @@ class Gallery extends React.Component{
    	.then(response =>{
    		//console.log('below is response',response);
    		let images = [];
-       console.log('response data from db', response.data)
+       //console.log('response data from db', response.data)
        let imagesSplit = response.data.imageUrl[0].split(',');
     
       for(let i = 0; i < imagesSplit.length; i++){

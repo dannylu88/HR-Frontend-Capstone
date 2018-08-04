@@ -11,21 +11,21 @@
 
 .imageContainer {
   height: 70%;
-  width: 70%;
+  width: 32%;
   padding-left: 6%;
   display: flex;
 }
 
 .perimeter {
-  max-width: 1300px;
+  max-width: auto;
   
   display: flex;
   flex-direction: column;
 }
 
  .renderImage {
-  height:1600px;
-  width: 1100px; 
+  height:auto;
+  width: auto; 
   flex: 0 0 100%;
 } 
 

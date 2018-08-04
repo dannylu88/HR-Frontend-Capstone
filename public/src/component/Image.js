@@ -6,7 +6,7 @@ import ReactImageMagnify from 'react-image-magnify';
 export default class Image extends Component {
   constructor(props){
     super(props)
-    console.log('Image Props', this.props)
+   // console.log('Image Props', this.props)
     this.state = {
       imageZoom: '',
       backgroundPosition: '30% 30%'
@@ -17,14 +17,14 @@ export default class Image extends Component {
   }
   
   handleHoverZoom(imageZoom){
-    console.log('hover zoom', imageZoom);
+    //console.log('hover zoom', imageZoom);
     this.setState({
       imageZoom:imageZoom
     });
   } 
   
   handleHoverZoomEnd(imageZoom){
-    console.log('hover zoom end', imageZoom)
+   // console.log('hover zoom end', imageZoom)
     this.setState({
       imageZoom: ''
     });

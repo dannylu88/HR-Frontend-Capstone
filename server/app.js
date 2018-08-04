@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 
 const imageRoutes = require('../route/image');
 
-mongoose.connect('mongodb+srv://dannylu8:'+ encodeURIComponent(process.env.MONGO_ATLAS_PW) +'@cluster0-oe6iz.mongodb.net/test?retryWrites=true', 
+mongoose.connect('mongodb+srv://dannylu8:'+ '12345' +'@cluster0-oe6iz.mongodb.net/test?retryWrites=true', 
 {
   useNewUrlParser: true
 }
